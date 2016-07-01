@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="study,msmf," />
+  <meta name="keywords" content="C++,study," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="study plan for next two months">
+<meta name="description" content="Chapter 2 summary">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Master Program Prep">
-<meta property="og:url" content="https://aldridgexia.github.io/2016/06/30/Master-Program-Prep/index.html">
+<meta property="og:title" content="C++ Primer Chapter 2 Summary">
+<meta property="og:url" content="https://aldridgexia.github.io/2016/07/01/C-Primer-Chapter-2-Summary/index.html">
 <meta property="og:site_name" content="Phantom of Wensan Road">
-<meta property="og:description" content="study plan for next two months">
-<meta property="og:updated_time" content="2016-06-30T11:29:45.000Z">
+<meta property="og:description" content="Chapter 2 summary">
+<meta property="og:updated_time" content="2016-07-01T12:17:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Master Program Prep">
-<meta name="twitter:description" content="study plan for next two months">
+<meta name="twitter:title" content="C++ Primer Chapter 2 Summary">
+<meta name="twitter:description" content="Chapter 2 summary">
 
 
 
@@ -114,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="https://aldridgexia.github.io/2016/06/30/Master-Program-Prep/"/>
+  <link rel="canonical" href="https://aldridgexia.github.io/2016/07/01/C-Primer-Chapter-2-Summary/"/>
 
-  <title> Master Program Prep | Phantom of Wensan Road </title>
+  <title> C++ Primer Chapter 2 Summary | Phantom of Wensan Road </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -256,7 +256,7 @@
             
             
               
-                Master Program Prep
+                C++ Primer Chapter 2 Summary
               
             
           </h1>
@@ -268,11 +268,30 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-06-30T18:55:49+08:00" content="2016-06-30">
-              2016-06-30
+            <time itemprop="dateCreated" datetime="2016-07-01T15:40:41+08:00" content="2016-07-01">
+              2016-07-01
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -296,75 +315,221 @@
       
 
       
-        <hr>
-<h1 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h1><h2 id="Linear-Algebra"><a href="#Linear-Algebra" class="headerlink" title="Linear Algebra"></a>Linear Algebra</h2><ul>
-<li>Textbook: <ul>
-<li>Linear Algebra and Its Applications 4ed.MIT Gilbert Strang</li>
+        <h1 id="变量和基本类型"><a href="#变量和基本类型" class="headerlink" title="变量和基本类型"></a>变量和基本类型</h1><h2 id="基本内置类型"><a href="#基本内置类型" class="headerlink" title="基本内置类型"></a>基本内置类型</h2><ul>
+<li>算数类型 (arithmetic type) 和空类型 (void)</li>
+</ul>
+<h3 id="算数类型"><a href="#算数类型" class="headerlink" title="算数类型"></a>算数类型</h3><ul>
+<li>整型 (integral type) 和浮点型</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>最小尺寸</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bool</td>
+<td>未定义</td>
+</tr>
+<tr>
+<td>char</td>
+<td>8位</td>
+</tr>
+<tr>
+<td>wchar_t</td>
+<td>16位</td>
+</tr>
+<tr>
+<td>char16_t</td>
+<td>16位</td>
+</tr>
+<tr>
+<td>char32_t</td>
+<td>32位</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16位</td>
+</tr>
+<tr>
+<td>int</td>
+<td>16位</td>
+</tr>
+<tr>
+<td>long</td>
+<td>32位</td>
+</tr>
+<tr>
+<td>long long</td>
+<td>64位 (C++11 新定义)</td>
+</tr>
+<tr>
+<td>float</td>
+<td>6位有效数字</td>
+</tr>
+<tr>
+<td>double</td>
+<td>10位有效数字</td>
+</tr>
+<tr>
+<td>long double</td>
+<td>10位有效数字</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>bool: true or false</li>
+</ul>
+<ul>
+<li>带符号的 (signed)<ul>
+<li>int, short, long, long long</li>
 </ul>
 </li>
-<li>Topics: <ul>
-<li>vector spaces, vectors, matrices, types of matrices, matrix transposes, determinants, inverses, linear transformation, eigenvalues and eigenvectors, spectral decomposition, linear dependence, rank, positive and negative definite matrices, vector spaces, partitioned matrices.</li>
+<li>无符号的 (unsigned)<ul>
+<li>unsigned int, unsigned char …</li>
 </ul>
 </li>
 </ul>
-<h2 id="Calculus"><a href="#Calculus" class="headerlink" title="Calculus"></a>Calculus</h2><ul>
-<li>Textbook:<ul>
-<li>简明微积分教程</li>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><ul>
+<li><code>bool b = 42; //b 为真</code><ul>
+<li>把非布尔类型的算数值赋给布尔类型时，初始值为0时结果为false，否则结果为true</li>
 </ul>
 </li>
-<li>Topics:<ul>
-<li>Functions, continuity, convexity, concavity, derivatives, gradients, Jacobians, Hessians, implicit function theorem, constrained optimization, Lagrange multipliers, Kuhn-Tucker conditions, maximum principle, envelope theorem.</li>
+<li><code>int i = b; //i 的值为1</code><ul>
+<li>把布尔值赋给非布尔类型时，初始值为false 则结果为0， 为true 时结果为1</li>
 </ul>
 </li>
-</ul>
-<h2 id="Probability"><a href="#Probability" class="headerlink" title="Probability"></a>Probability</h2><ul>
-<li>Textbook:<ul>
-<li>陈希孺文集·概率论与数理统计</li>
+<li><code>i = 3.14； //i的值为3</code><ul>
+<li>把浮点数赋给整数类型时，仅保留浮点数中小数点前的部分</li>
 </ul>
 </li>
-<li>Topics:<ul>
-<li>Axiomatic foundations of probability, state space, probability measures, continuous and discrete random variables, distributions and densities of random variables, important parametric families of distributions.</li>
-<li>Expectations, variance, covariance, moments (mean, variance, skewness, kurtosis), quantiles, independence, conditioning, conditional expectations, conditional distributions, correlation and independence.</li>
-<li>Characteristic functions, modes of convergence, laws of large numbers, central limit theorems, Bayes theorem.</li>
+<li><code>double pi = i; //pi 的值为3.0</code><ul>
+<li>把整数值赋给浮点类型时，小数部分为0，如果整数所占空间超过浮点类型的容量，精度可能有损失</li>
 </ul>
 </li>
-</ul>
-<h2 id="Stochastic-Processes"><a href="#Stochastic-Processes" class="headerlink" title="Stochastic Processes"></a>Stochastic Processes</h2><ul>
-<li>Textbook:<ul>
-<li>Shreve I, II, Stochastic Processes by Ross</li>
+<li><code>unsigned char c = -1; //假设char 占8比特， c 的值为255</code><ul>
+<li>赋给无符号类型一个超过它表示范围的值时，结果是初始值对无符号类型表示数值总数取模后的余数。</li>
 </ul>
 </li>
-<li>Topics:<ul>
-<li>Filtration, martingales, linear processes, random walks, autoregressive and moving average processes, stationarity, processes with independent increments, martingales, submartingales, supermartingales, Brownian motion.</li>
+<li><code>signed char c2 = 256; //假设char 占8比特，c2 的值是未定义的</code><ul>
+<li>赋给带符号类型一个超过它表示范围的值时，结果是未定义的 (undefined)</li>
 </ul>
 </li>
 </ul>
-<hr>
-<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><ul>
-<li>Textbook:<ul>
-<li>C++ Primer, DSA_THU</li>
+<p>含有无符号类型的表达式</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">unsigned</span> u = <span class="number">10</span>;</div><div class="line"><span class="keyword">int</span> i = <span class="number">-42</span>;</div><div class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt; i + i &lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>; <span class="comment">//输出-84</span></div><div class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt; u + i &lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>; <span class="comment">//如果int 是32位，输出 2^32 - 32</span></div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">unsigned</span> u1 = <span class="number">42</span>, u2 = <span class="number">10</span>;</div><div class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt; u1 - u2 &lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>; <span class="comment">//正确：输出32</span></div><div class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt; u2 - u1 &lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>; <span class="comment">//正确：结果是取模后的值</span></div></pre></td></tr></table></figure>
+<h3 id="字面值常量"><a href="#字面值常量" class="headerlink" title="字面值常量"></a>字面值常量</h3><p>整型和浮点型字面值</p>
+<ul>
+<li><code>20 //十进制    024 //八进制    0x14 //十六进制</code></li>
+<li><code>3.14159 3.14159E0 0. 0E0 .001</code></li>
+</ul>
+<p>字符和字符串字面值</p>
+<ul>
+<li><code>&#39;a&#39; //字符字面值 &quot;Hello World!&quot; //字符串字面值</code></li>
+</ul>
+<ul>
+<li>转义序列</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>换行符</td>
+<td>\n</td>
+</tr>
+<tr>
+<td>纵向制表符</td>
+<td>\v</td>
+</tr>
+<tr>
+<td>反斜线</td>
+<td>\</td>
+</tr>
+<tr>
+<td>回车符</td>
+<td>\r</td>
+</tr>
+<tr>
+<td>横向制表符</td>
+<td>\t</td>
+</tr>
+<tr>
+<td>退格符</td>
+<td>\b</td>
+</tr>
+<tr>
+<td>问号</td>
+<td>\?</td>
+</tr>
+<tr>
+<td>进纸符</td>
+<td>\f</td>
+</tr>
+<tr>
+<td>报警符</td>
+<td>\a</td>
+</tr>
+<tr>
+<td>双引号</td>
+<td>\”</td>
+</tr>
+<tr>
+<td>单引号</td>
+<td>\’</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>指定字面值的类型</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>前缀</th>
+<th>含义</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>u</td>
+<td>Unicode 16 字符</td>
+<td>char16_t</td>
+</tr>
+<tr>
+<td>U</td>
+<td>Unicode 32 字符</td>
+<td>char32_t</td>
+</tr>
+<tr>
+<td>L</td>
+<td>宽字符</td>
+<td>wchar_t</td>
+</tr>
+<tr>
+<td>u8</td>
+<td>UTF-8</td>
+<td>char</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>布尔字面值和指针字面值<ul>
+<li><code>true, false</code>    </li>
+<li><code>nullptr</code></li>
 </ul>
 </li>
-<li>Topics:<ul>
-<li>built-in-types, control structure,<br>classes, constructors, destructors, function overloading, operator<br>functions, friend functions, inheritance, and polymorphism with dynamic<br>binding.</li>
 </ul>
-</li>
-</ul>
-<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><ul>
-<li>Textbook:<ul>
-<li>Python数据分析基础教程：NumPy学习指南（第2版），集体智慧编程</li>
-</ul>
-</li>
-</ul>
-<h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><ul>
-<li>Online Course:<ul>
-<li>Machine Learning by Andrew Ng</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>Details remain to be added in future.</p>
-
+<p>​</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h2 id="复合类型"><a href="#复合类型" class="headerlink" title="复合类型"></a>复合类型</h2><h2 id="const-限定符"><a href="#const-限定符" class="headerlink" title="const 限定符"></a>const 限定符</h2><h2 id="处理类型"><a href="#处理类型" class="headerlink" title="处理类型"></a>处理类型</h2><h2 id="自定义数据结构"><a href="#自定义数据结构" class="headerlink" title="自定义数据结构"></a>自定义数据结构</h2>
       
     </div>
 
@@ -385,9 +550,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/study/" rel="tag">#study</a>
+            <a href="/tags/C/" rel="tag">#C++</a>
           
-            <a href="/tags/msmf/" rel="tag">#msmf</a>
+            <a href="/tags/study/" rel="tag">#study</a>
           
         </div>
       
@@ -396,17 +561,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/30/西南之旅/" rel="next" title="西南之旅">
-                <i class="fa fa-chevron-left"></i> 西南之旅
+              <a href="/2016/07/01/Javascript-Tutorial/" rel="next" title="Javascript Tutorial">
+                <i class="fa fa-chevron-left"></i> Javascript Tutorial
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/01/Javascript-Tutorial/" rel="prev" title="Javascript Tutorial">
-                Javascript Tutorial <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -531,7 +692,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Math"><span class="nav-number">1.</span> <span class="nav-text">Math</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Algebra"><span class="nav-number">1.1.</span> <span class="nav-text">Linear Algebra</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Calculus"><span class="nav-number">1.2.</span> <span class="nav-text">Calculus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Probability"><span class="nav-number">1.3.</span> <span class="nav-text">Probability</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stochastic-Processes"><span class="nav-number">1.4.</span> <span class="nav-text">Stochastic Processes</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">2.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">2.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python"><span class="nav-number">2.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Machine-Learning"><span class="nav-number">2.3.</span> <span class="nav-text">Machine Learning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">3.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#变量和基本类型"><span class="nav-number">1.</span> <span class="nav-text">变量和基本类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本内置类型"><span class="nav-number">1.1.</span> <span class="nav-text">基本内置类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算数类型"><span class="nav-number">1.1.1.</span> <span class="nav-text">算数类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">1.1.2.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字面值常量"><span class="nav-number">1.1.3.</span> <span class="nav-text">字面值常量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">1.2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复合类型"><span class="nav-number">1.3.</span> <span class="nav-text">复合类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const-限定符"><span class="nav-number">1.4.</span> <span class="nav-text">const 限定符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理类型"><span class="nav-number">1.5.</span> <span class="nav-text">处理类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义数据结构"><span class="nav-number">1.6.</span> <span class="nav-text">自定义数据结构</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
