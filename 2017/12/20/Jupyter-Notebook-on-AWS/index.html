@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="life," />
+  <meta name="keywords" content="Python,Jupyter Notebook,AWS," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="Day1">
+<meta name="description" content="detailed tutorial on how to run Jupyter Notebook on AWS instance">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Day1">
-<meta property="og:url" content="https://aldridgexia.github.io/2017/12/20/Day1/index.html">
+<meta property="og:title" content="Jupyter Notebook on AWS">
+<meta property="og:url" content="https://aldridgexia.github.io/2017/12/20/Jupyter-Notebook-on-AWS/index.html">
 <meta property="og:site_name" content="Phantom of Wensan Road">
-<meta property="og:description" content="Day1">
-<meta property="og:updated_time" content="2017-12-20T16:09:08.627Z">
+<meta property="og:description" content="detailed tutorial on how to run Jupyter Notebook on AWS instance">
+<meta property="og:updated_time" content="2017-12-21T06:07:32.845Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Day1">
-<meta name="twitter:description" content="Day1">
+<meta name="twitter:title" content="Jupyter Notebook on AWS">
+<meta name="twitter:description" content="detailed tutorial on how to run Jupyter Notebook on AWS instance">
 
 
 
@@ -114,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="https://aldridgexia.github.io/2017/12/20/Day1/"/>
+  <link rel="canonical" href="https://aldridgexia.github.io/2017/12/20/Jupyter-Notebook-on-AWS/"/>
 
-  <title> Day1 | Phantom of Wensan Road </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> Jupyter Notebook on AWS | Phantom of Wensan Road </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -256,7 +256,7 @@
             
             
               
-                Day1
+                Jupyter Notebook on AWS
               
             
           </h1>
@@ -268,30 +268,11 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-12-20T03:04:13-05:00" content="2017-12-20">
+            <time itemprop="dateCreated" datetime="2017-12-20T11:10:23-05:00" content="2017-12-20">
               2017-12-20
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">life</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
@@ -315,8 +296,25 @@
       
 
       
-        <p>First day of post graduation life. </p>
-<p>Dream on.</p>
+        <h1 id="Running-Jupyter-Notebook-on-AWS-EC2-Made-Easy"><a href="#Running-Jupyter-Notebook-on-AWS-EC2-Made-Easy" class="headerlink" title="Running Jupyter Notebook on AWS EC2 Made Easy"></a>Running Jupyter Notebook on AWS EC2 Made Easy</h1><p>Have you thought about running your Jupyter Notebook on the cloud 7/24 so you can access to it as long as you have Internet access and a browser? You know, you should know how to do it after reading this post. Let’s dive right into it!</p>
+<h2 id="First-Thing-First-Create-an-AWS-EC2-Instance"><a href="#First-Thing-First-Create-an-AWS-EC2-Instance" class="headerlink" title="First Thing First: Create an AWS EC2 Instance"></a>First Thing First: Create an AWS EC2 Instance</h2><p>TBA</p>
+<h2 id="Connect-to-EC2-Instance-with-SSH"><a href="#Connect-to-EC2-Instance-with-SSH" class="headerlink" title="Connect to EC2 Instance with SSH"></a>Connect to EC2 Instance with SSH</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -i <span class="string">"your.pem"</span> ec2-user@[your dns goes here].amazonaws.com</div></pre></td></tr></table></figure>
+<h2 id="Download-Anaconda-3"><a href="#Download-Anaconda-3" class="headerlink" title="Download Anaconda 3"></a>Download Anaconda 3</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget http://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh</div></pre></td></tr></table></figure>
+<p>This is a shell script that guides you though the install. Then run the installation file.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bash Anaconda3-5.0.1-Linux-x86_64.sh</div></pre></td></tr></table></figure>
+<h2 id="Transfer-Data-Between-EC2-Instance-and-Your-Computer"><a href="#Transfer-Data-Between-EC2-Instance-and-Your-Computer" class="headerlink" title="Transfer Data Between EC2 Instance and Your Computer"></a>Transfer Data Between EC2 Instance and Your Computer</h2><p>To upload a file from your laptop to Amazon instance:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -i ~/Desktop/amazon.pem ~/Desktop/test.csv  ec2-user@ec2-54-166-128-20.compute-1.amazonaws.com:~/data/</div></pre></td></tr></table></figure>
+<p>Similarly, to download a file from Amazon instance to your laptop:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -i ~/Desktop/amazon.pem ec2-user@ec2-54-166-128-20.compute-1.amazonaws.com:/data/test.py ~/Download/</div></pre></td></tr></table></figure>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><a href="https://stackoverflow.com/questions/38080407/how-can-i-install-the-latest-anaconda-with-wget" target="_blank" rel="external">Install Anaconda 3</a></li>
+<li><a href="http://angus.readthedocs.io/en/2014/amazon/transfer-files-between-instance.html" target="_blank" rel="external">Transfer data</a></li>
+<li><a href="http://blog.impiyush.com/2015/02/running-ipython-notebook-server-on-aws.html" target="_blank" rel="external">Running an iPython Notebook Server on AWS - EC2 Instance</a></li>
+<li><a href="https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6" target="_blank" rel="external">Jupyter Notebooks on AWS EC2 in 15 (mostly easy) steps</a></li>
+<li><a href="https://medium.com/@josemarcialportilla/getting-spark-python-and-jupyter-notebook-running-on-amazon-ec2-dec599e1c297" target="_blank" rel="external">Getting Spark, Python, and Jupyter Notebook running on Amazon EC2</a></li>
+<li><a href="https://bitmingw.com/2017/07/09/run-jupyter-notebook-server/" target="_blank" rel="external">搭建 ipython/jupyter notebook 服务器</a></li>
+<li><a href="http://blog.leanote.com/post/jevonswang/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AEjupyter-notebook" target="_blank" rel="external">远程访问jupyter notebook</a></li>
+</ol>
 
       
     </div>
@@ -338,7 +336,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/life/" rel="tag">#life</a>
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/Jupyter-Notebook/" rel="tag">#Jupyter Notebook</a>
+          
+            <a href="/tags/AWS/" rel="tag">#AWS</a>
           
         </div>
       
@@ -347,17 +349,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/13/Python-for-Finance-notes/" rel="next" title="Python-for-Finance-notes">
-                <i class="fa fa-chevron-left"></i> Python-for-Finance-notes
+              <a href="/2017/12/20/Day1/" rel="next" title="Day1">
+                <i class="fa fa-chevron-left"></i> Day1
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/20/Jupyter-Notebook-on-AWS/" rel="prev" title="Jupyter Notebook on AWS">
-                Jupyter Notebook on AWS <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -482,7 +480,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Running-Jupyter-Notebook-on-AWS-EC2-Made-Easy"><span class="nav-number">1.</span> <span class="nav-text">Running Jupyter Notebook on AWS EC2 Made Easy</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#First-Thing-First-Create-an-AWS-EC2-Instance"><span class="nav-number">1.1.</span> <span class="nav-text">First Thing First: Create an AWS EC2 Instance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Connect-to-EC2-Instance-with-SSH"><span class="nav-number">1.2.</span> <span class="nav-text">Connect to EC2 Instance with SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-Anaconda-3"><span class="nav-number">1.3.</span> <span class="nav-text">Download Anaconda 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transfer-Data-Between-EC2-Instance-and-Your-Computer"><span class="nav-number">1.4.</span> <span class="nav-text">Transfer Data Between EC2 Instance and Your Computer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.5.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
