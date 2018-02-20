@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next mist use-motion">
+<html class="theme-next mist">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -84,19 +82,17 @@
 
 
 
-<meta name="description" content="AboutI’m Jerry Xia, welcome! 
-A little bit about myself, I received my Bachelor degree in Economics from Zhejiang University and Master degree in Mathematical Finance from Boston University. This blog">
+<meta name="description" content="AboutI’m Jerry Xia, welcome!  A little bit about myself, I received my Bachelor degree in Economics from Zhejiang University and Master degree in Mathematical Finance from Boston University. This blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
 <meta property="og:url" content="https://aldridgexia.github.io/about/index.html">
 <meta property="og:site_name" content="Phantom of Wensan Road">
-<meta property="og:description" content="AboutI’m Jerry Xia, welcome! 
-A little bit about myself, I received my Bachelor degree in Economics from Zhejiang University and Master degree in Mathematical Finance from Boston University. This blog">
+<meta property="og:description" content="AboutI’m Jerry Xia, welcome!  A little bit about myself, I received my Bachelor degree in Economics from Zhejiang University and Master degree in Mathematical Finance from Boston University. This blog">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-02-20T05:37:16.964Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="about">
-<meta name="twitter:description" content="AboutI’m Jerry Xia, welcome! 
-A little bit about myself, I received my Bachelor degree in Economics from Zhejiang University and Master degree in Mathematical Finance from Boston University. This blog">
+<meta name="twitter:description" content="AboutI’m Jerry Xia, welcome!  A little bit about myself, I received my Bachelor degree in Economics from Zhejiang University and Master degree in Mathematical Finance from Boston University. This blog">
 
 
 
@@ -104,9 +100,9 @@ A little bit about myself, I received my Bachelor degree in Economics from Zheji
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"right","display":"post"},
     fancybox: true,
-    motion: true,
+    motion: false,
     duoshuo: {
       userId: 0,
       author: 'Author'
@@ -146,7 +142,7 @@ A little bit about myself, I received my Bachelor degree in Economics from Zheji
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left  ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -241,9 +237,9 @@ A little bit about myself, I received my Bachelor degree in Economics from Zheji
 <p>A little bit about myself, I received my Bachelor degree in Economics from Zhejiang University and Master degree in Mathematical Finance from Boston University. This blog is about everything I find interesting, either in work or in life. As a future quantitative developer, I enjoy writing stuff in Python and R. Nevertheless, I also know MATLAB, VBA, and C++. </p>
 <p>That’s enough for bragging, if you find something in this site particularly interesting or wish to know more about me, check the following links:</p>
 <ul>
-<li>[α] Email: <a href="mailto:aldridgexia@gmail.com" target="_blank" rel="external">contact me</a></li>
-<li>[β] GitHub: <a href="https://github.com/Aldridgexia" target="_blank" rel="external">alxia</a></li>
-<li>[γ] LinkedIn: <a href="https://www.linkedin.com/in/jiahuixia/" target="_blank" rel="external">Jerry Xia</a></li>
+<li>[α] Email: <a href="mailto:aldridgexia@gmail.com" target="_blank" rel="noopener">contact me</a></li>
+<li>[β] GitHub: <a href="https://github.com/Aldridgexia" target="_blank" rel="noopener">alxia</a></li>
+<li>[γ] LinkedIn: <a href="https://www.linkedin.com/in/jiahuixia/" target="_blank" rel="noopener">Jerry Xia</a></li>
 </ul>
 
     
@@ -290,7 +286,7 @@ A little bit about myself, I received my Bachelor degree in Economics from Zheji
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -354,7 +350,7 @@ A little bit about myself, I received my Bachelor degree in Economics from Zheji
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2016 - 
   <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -456,6 +452,26 @@ A little bit about myself, I received my Bachelor degree in Economics from Zheji
   
   
   
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
   
 
@@ -562,7 +578,24 @@ A little bit about myself, I received my Bachelor degree in Economics from Zheji
         showTime(Counter);
       }
     });
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 

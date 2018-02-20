@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next mist use-motion">
+<html class="theme-next mist">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -85,11 +83,13 @@
 
 
 <meta name="description" content="Breadth first search for directed graph">
+<meta name="keywords" content="Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BFS-Graph">
 <meta property="og:url" content="https://aldridgexia.github.io/2017/06/30/BFS-Graph/index.html">
 <meta property="og:site_name" content="Phantom of Wensan Road">
 <meta property="og:description" content="Breadth first search for directed graph">
+<meta property="og:locale" content="en">
 <meta property="og:image" content="http://www.geeksforgeeks.org/wp-content/uploads/DFS.jpg">
 <meta property="og:updated_time" content="2017-06-30T20:23:29.000Z">
 <meta name="twitter:card" content="summary">
@@ -103,9 +103,9 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"right","display":"post"},
     fancybox: true,
-    motion: true,
+    motion: false,
     duoshuo: {
       userId: 0,
       author: 'Author'
@@ -139,7 +139,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -326,11 +326,11 @@
 <li>When a vertex is reached, alter the corresponding element in the state list from False to True.</li>
 <li>When the queue is empty, all vertices are reached.</li>
 </ul>
-<h3 id="Code-in-Python-3-5"><a href="#Code-in-Python-3-5" class="headerlink" title="Code in Python 3.5"></a>Code in Python 3.5</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict, deque</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Graph</span>:</span></div><div class="line">    <span class="string">'''</span></div><div class="line">    A class for directed graph, with a method BFS to do Broad First Search and a method addEdge to construct adjacency list.</div><div class="line">    '''</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="comment"># use default dictionary with list to store the graph</span></div><div class="line">        self.graph = defaultdict(list)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="comment"># function to demonstrate the adjacency list of the graph</span></div><div class="line">        a_list = <span class="string">''</span></div><div class="line">        <span class="keyword">for</span> k,v <span class="keyword">in</span> self.graph.items():</div><div class="line">            a_list += repr(k) + <span class="string">': '</span> + repr(v) + <span class="string">'\n'</span></div><div class="line">        <span class="keyword">return</span> a_list</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addEdge</span><span class="params">(self, l, r)</span>:</span></div><div class="line">        <span class="comment"># construct the adjacency list, add an edge to the graph</span></div><div class="line">        self.graph[l].append(r)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">BFS</span><span class="params">(self, start)</span>:</span></div><div class="line">        <span class="comment"># conduct BFS with a given start vertex and print it out</span></div><div class="line">        visited = [<span class="keyword">False</span>] * len(self.graph)</div><div class="line">        queue = deque([])</div><div class="line">        queue.append(start)</div><div class="line">        visited[start] = <span class="keyword">True</span></div><div class="line"></div><div class="line">        <span class="keyword">while</span> queue:</div><div class="line">            start = queue.popleft()</div><div class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> self.graph[start]:</div><div class="line">                <span class="keyword">if</span> visited[i] <span class="keyword">is</span> <span class="keyword">False</span>:</div><div class="line">                    queue.append(i)</div><div class="line">                    visited[i] = <span class="keyword">True</span></div><div class="line">            <span class="keyword">if</span> queue:</div><div class="line">                print(start, end=<span class="string">'=&gt;'</span>)</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                print(start)</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    <span class="comment"># create a graph given in the above diagram</span></div><div class="line">    graph = Graph()</div><div class="line">    graph.addEdge(<span class="number">0</span>, <span class="number">1</span>)</div><div class="line">    graph.addEdge(<span class="number">0</span>, <span class="number">2</span>)</div><div class="line">    graph.addEdge(<span class="number">1</span>, <span class="number">2</span>)</div><div class="line">    graph.addEdge(<span class="number">2</span>, <span class="number">0</span>)</div><div class="line">    graph.addEdge(<span class="number">2</span>, <span class="number">3</span>)</div><div class="line">    graph.addEdge(<span class="number">3</span>, <span class="number">3</span>)</div><div class="line">    <span class="comment"># print the adjacency list</span></div><div class="line">    print(<span class="string">'the adjacency list of this graph: '</span>)</div><div class="line">    print(graph)</div><div class="line">    print(<span class="string">'BFS result with vertex 2 as start point:'</span>)</div><div class="line">    graph.BFS(<span class="number">2</span>)</div></pre></td></tr></table></figure>
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">the adjacency list of this graph: </div><div class="line">0: [1, 2]</div><div class="line">1: [2]</div><div class="line">2: [0, 3]</div><div class="line">3: [3]</div><div class="line"></div><div class="line">2=&gt;0=&gt;3=&gt;1</div></pre></td></tr></table></figure>
+<h3 id="Code-in-Python-3-5"><a href="#Code-in-Python-3-5" class="headerlink" title="Code in Python 3.5"></a>Code in Python 3.5</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict, deque</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Graph</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    A class for directed graph, with a method BFS to do Broad First Search and a method addEdge to construct adjacency list.</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># use default dictionary with list to store the graph</span></span><br><span class="line">        self.graph = defaultdict(list)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># function to demonstrate the adjacency list of the graph</span></span><br><span class="line">        a_list = <span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> k,v <span class="keyword">in</span> self.graph.items():</span><br><span class="line">            a_list += repr(k) + <span class="string">': '</span> + repr(v) + <span class="string">'\n'</span></span><br><span class="line">        <span class="keyword">return</span> a_list</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addEdge</span><span class="params">(self, l, r)</span>:</span></span><br><span class="line">        <span class="comment"># construct the adjacency list, add an edge to the graph</span></span><br><span class="line">        self.graph[l].append(r)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">BFS</span><span class="params">(self, start)</span>:</span></span><br><span class="line">        <span class="comment"># conduct BFS with a given start vertex and print it out</span></span><br><span class="line">        visited = [<span class="keyword">False</span>] * len(self.graph)</span><br><span class="line">        queue = deque([])</span><br><span class="line">        queue.append(start)</span><br><span class="line">        visited[start] = <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            start = queue.popleft()</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> self.graph[start]:</span><br><span class="line">                <span class="keyword">if</span> visited[i] <span class="keyword">is</span> <span class="keyword">False</span>:</span><br><span class="line">                    queue.append(i)</span><br><span class="line">                    visited[i] = <span class="keyword">True</span></span><br><span class="line">            <span class="keyword">if</span> queue:</span><br><span class="line">                print(start, end=<span class="string">'=&gt;'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                print(start)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># create a graph given in the above diagram</span></span><br><span class="line">    graph = Graph()</span><br><span class="line">    graph.addEdge(<span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">    graph.addEdge(<span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line">    graph.addEdge(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">    graph.addEdge(<span class="number">2</span>, <span class="number">0</span>)</span><br><span class="line">    graph.addEdge(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">    graph.addEdge(<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line">    <span class="comment"># print the adjacency list</span></span><br><span class="line">    print(<span class="string">'the adjacency list of this graph: '</span>)</span><br><span class="line">    print(graph)</span><br><span class="line">    print(<span class="string">'BFS result with vertex 2 as start point:'</span>)</span><br><span class="line">    graph.BFS(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">the adjacency list of this graph: </span><br><span class="line">0: [1, 2]</span><br><span class="line">1: [2]</span><br><span class="line">2: [0, 3]</span><br><span class="line">3: [3]</span><br><span class="line"></span><br><span class="line">2=&gt;0=&gt;3=&gt;1</span><br></pre></td></tr></table></figure>
 <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
-<li><a href="http://www.geeksforgeeks.org/breadth-first-traversal-for-a-graph/" target="_blank" rel="external">Breadth First Traversal or BFS for a Graph</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/24768479" target="_blank" rel="external">{面试常见算法80题: {图: [广度优先搜索]}}</a></li>
+<li><a href="http://www.geeksforgeeks.org/breadth-first-traversal-for-a-graph/" target="_blank" rel="noopener">Breadth First Traversal or BFS for a Graph</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/24768479" target="_blank" rel="noopener">{面试常见算法80题: {图: [广度优先搜索]}}</a></li>
 </ul>
 
       
@@ -440,7 +440,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -515,7 +515,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2016 - 
   <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -621,6 +621,26 @@
   
   
   
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
   
 
@@ -727,7 +747,24 @@
         showTime(Counter);
       }
     });
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 

@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next mist use-motion">
+<html class="theme-next mist">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -85,11 +83,13 @@
 
 
 <meta name="description" content="detailed tutorial on how to run Jupyter Notebook on AWS instance">
+<meta name="keywords" content="Python,Jupyter Notebook,AWS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jupyter Notebook on AWS">
 <meta property="og:url" content="https://aldridgexia.github.io/2017/12/20/Jupyter-Notebook-on-AWS/index.html">
 <meta property="og:site_name" content="Phantom of Wensan Road">
 <meta property="og:description" content="detailed tutorial on how to run Jupyter Notebook on AWS instance">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2017-12-21T06:07:32.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jupyter Notebook on AWS">
@@ -101,9 +101,9 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"right","display":"post"},
     fancybox: true,
-    motion: true,
+    motion: false,
     duoshuo: {
       userId: 0,
       author: 'Author'
@@ -137,7 +137,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -297,22 +297,22 @@
       
         <h1 id="Running-Jupyter-Notebook-on-AWS-EC2-Made-Easy"><a href="#Running-Jupyter-Notebook-on-AWS-EC2-Made-Easy" class="headerlink" title="Running Jupyter Notebook on AWS EC2 Made Easy"></a>Running Jupyter Notebook on AWS EC2 Made Easy</h1><p>Have you thought about running your Jupyter Notebook on the cloud 7/24 so you can access to it as long as you have Internet access and a browser? You know, you should know how to do it after reading this post. Let’s dive right into it!</p>
 <h2 id="First-Thing-First-Create-an-AWS-EC2-Instance"><a href="#First-Thing-First-Create-an-AWS-EC2-Instance" class="headerlink" title="First Thing First: Create an AWS EC2 Instance"></a>First Thing First: Create an AWS EC2 Instance</h2><p>TBA</p>
-<h2 id="Connect-to-EC2-Instance-with-SSH"><a href="#Connect-to-EC2-Instance-with-SSH" class="headerlink" title="Connect to EC2 Instance with SSH"></a>Connect to EC2 Instance with SSH</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -i <span class="string">"your.pem"</span> ec2-user@[your dns goes here].amazonaws.com</div></pre></td></tr></table></figure>
-<h2 id="Download-Anaconda-3"><a href="#Download-Anaconda-3" class="headerlink" title="Download Anaconda 3"></a>Download Anaconda 3</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget http://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh</div></pre></td></tr></table></figure>
+<h2 id="Connect-to-EC2-Instance-with-SSH"><a href="#Connect-to-EC2-Instance-with-SSH" class="headerlink" title="Connect to EC2 Instance with SSH"></a>Connect to EC2 Instance with SSH</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -i <span class="string">"your.pem"</span> ec2-user@[your dns goes here].amazonaws.com</span><br></pre></td></tr></table></figure>
+<h2 id="Download-Anaconda-3"><a href="#Download-Anaconda-3" class="headerlink" title="Download Anaconda 3"></a>Download Anaconda 3</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
 <p>This is a shell script that guides you though the install. Then run the installation file.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bash Anaconda3-5.0.1-Linux-x86_64.sh</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash Anaconda3-5.0.1-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
 <h2 id="Transfer-Data-Between-EC2-Instance-and-Your-Computer"><a href="#Transfer-Data-Between-EC2-Instance-and-Your-Computer" class="headerlink" title="Transfer Data Between EC2 Instance and Your Computer"></a>Transfer Data Between EC2 Instance and Your Computer</h2><p>To upload a file from your laptop to Amazon instance:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -i ~/Desktop/amazon.pem ~/Desktop/test.csv  ec2-user@ec2-54-166-128-20.compute-1.amazonaws.com:~/data/</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -i ~/Desktop/amazon.pem ~/Desktop/test.csv  ec2-user@ec2-54-166-128-20.compute-1.amazonaws.com:~/data/</span><br></pre></td></tr></table></figure>
 <p>Similarly, to download a file from Amazon instance to your laptop:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -i ~/Desktop/amazon.pem ec2-user@ec2-54-166-128-20.compute-1.amazonaws.com:/data/test.py ~/Download/</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -i ~/Desktop/amazon.pem ec2-user@ec2-54-166-128-20.compute-1.amazonaws.com:/data/test.py ~/Download/</span><br></pre></td></tr></table></figure>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
-<li><a href="https://stackoverflow.com/questions/38080407/how-can-i-install-the-latest-anaconda-with-wget" target="_blank" rel="external">Install Anaconda 3</a></li>
-<li><a href="http://angus.readthedocs.io/en/2014/amazon/transfer-files-between-instance.html" target="_blank" rel="external">Transfer data</a></li>
-<li><a href="http://blog.impiyush.com/2015/02/running-ipython-notebook-server-on-aws.html" target="_blank" rel="external">Running an iPython Notebook Server on AWS - EC2 Instance</a></li>
-<li><a href="https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6" target="_blank" rel="external">Jupyter Notebooks on AWS EC2 in 15 (mostly easy) steps</a></li>
-<li><a href="https://medium.com/@josemarcialportilla/getting-spark-python-and-jupyter-notebook-running-on-amazon-ec2-dec599e1c297" target="_blank" rel="external">Getting Spark, Python, and Jupyter Notebook running on Amazon EC2</a></li>
-<li><a href="https://bitmingw.com/2017/07/09/run-jupyter-notebook-server/" target="_blank" rel="external">搭建 ipython/jupyter notebook 服务器</a></li>
-<li><a href="http://blog.leanote.com/post/jevonswang/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AEjupyter-notebook" target="_blank" rel="external">远程访问jupyter notebook</a></li>
+<li><a href="https://stackoverflow.com/questions/38080407/how-can-i-install-the-latest-anaconda-with-wget" target="_blank" rel="noopener">Install Anaconda 3</a></li>
+<li><a href="http://angus.readthedocs.io/en/2014/amazon/transfer-files-between-instance.html" target="_blank" rel="noopener">Transfer data</a></li>
+<li><a href="http://blog.impiyush.com/2015/02/running-ipython-notebook-server-on-aws.html" target="_blank" rel="noopener">Running an iPython Notebook Server on AWS - EC2 Instance</a></li>
+<li><a href="https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6" target="_blank" rel="noopener">Jupyter Notebooks on AWS EC2 in 15 (mostly easy) steps</a></li>
+<li><a href="https://medium.com/@josemarcialportilla/getting-spark-python-and-jupyter-notebook-running-on-amazon-ec2-dec599e1c297" target="_blank" rel="noopener">Getting Spark, Python, and Jupyter Notebook running on Amazon EC2</a></li>
+<li><a href="https://bitmingw.com/2017/07/09/run-jupyter-notebook-server/" target="_blank" rel="noopener">搭建 ipython/jupyter notebook 服务器</a></li>
+<li><a href="http://blog.leanote.com/post/jevonswang/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AEjupyter-notebook" target="_blank" rel="noopener">远程访问jupyter notebook</a></li>
 </ol>
 
       
@@ -355,6 +355,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/20/LaTeX-test/" rel="prev" title="LaTeX test">
+                LaTeX test <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -422,7 +426,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -497,7 +501,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2016 - 
   <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -603,6 +607,26 @@
   
   
   
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
   
 
@@ -709,7 +733,24 @@
         showTime(Counter);
       }
     });
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 
