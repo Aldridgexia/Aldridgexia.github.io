@@ -66,7 +66,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python,Jupyter Notebook,AWS," />
+  <meta name="keywords" content="Quant," />
 
 
 
@@ -82,18 +82,18 @@
 
 
 
-<meta name="description" content="detailed tutorial on how to run Jupyter Notebook on AWS instance">
-<meta name="keywords" content="Python,Jupyter Notebook,AWS">
+<meta name="description" content="common quant inteview questions">
+<meta name="keywords" content="Quant">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jupyter Notebook on AWS">
-<meta property="og:url" content="https://aldridgexia.github.io/2017/12/20/Jupyter-Notebook-on-AWS/index.html">
+<meta property="og:title" content="Quant Interview Questions">
+<meta property="og:url" content="https://aldridgexia.github.io/2018/07/20/quant-interview-questions/index.html">
 <meta property="og:site_name" content="Phantom of Wensan Road">
-<meta property="og:description" content="detailed tutorial on how to run Jupyter Notebook on AWS instance">
+<meta property="og:description" content="common quant inteview questions">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-12-21T06:07:32.845Z">
+<meta property="og:updated_time" content="2018-07-20T04:19:53.346Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jupyter Notebook on AWS">
-<meta name="twitter:description" content="detailed tutorial on how to run Jupyter Notebook on AWS instance">
+<meta name="twitter:title" content="Quant Interview Questions">
+<meta name="twitter:description" content="common quant inteview questions">
 
 
 
@@ -114,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="https://aldridgexia.github.io/2017/12/20/Jupyter-Notebook-on-AWS/"/>
+  <link rel="canonical" href="https://aldridgexia.github.io/2018/07/20/quant-interview-questions/"/>
 
-  <title> Jupyter Notebook on AWS | Phantom of Wensan Road </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> Quant Interview Questions | Phantom of Wensan Road </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -246,7 +246,7 @@
             
             
               
-                Jupyter Notebook on AWS
+                Quant Interview Questions
               
             
           </h1>
@@ -258,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-12-20T11:10:23-05:00" content="2017-12-20">
-              2017-12-20
+            <time itemprop="dateCreated" datetime="2018-07-20T00:08:24-04:00" content="2018-07-20">
+              2018-07-20
             </time>
           </span>
 
@@ -273,7 +273,7 @@
 
           
           
-             <span id="/2017/12/20/Jupyter-Notebook-on-AWS/" class="leancloud_visitors" data-flag-title="Jupyter Notebook on AWS">
+             <span id="/2018/07/20/quant-interview-questions/" class="leancloud_visitors" data-flag-title="Quant Interview Questions">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -295,26 +295,36 @@
       
 
       
-        <h1 id="Running-Jupyter-Notebook-on-AWS-EC2-Made-Easy"><a href="#Running-Jupyter-Notebook-on-AWS-EC2-Made-Easy" class="headerlink" title="Running Jupyter Notebook on AWS EC2 Made Easy"></a>Running Jupyter Notebook on AWS EC2 Made Easy</h1><p>Have you thought about running your Jupyter Notebook on the cloud 7/24 so you can access to it as long as you have Internet access and a browser? You know, you should know how to do it after reading this post. Let’s dive right into it!</p>
-<h2 id="First-Thing-First-Create-an-AWS-EC2-Instance"><a href="#First-Thing-First-Create-an-AWS-EC2-Instance" class="headerlink" title="First Thing First: Create an AWS EC2 Instance"></a>First Thing First: Create an AWS EC2 Instance</h2><p>TBA</p>
-<h2 id="Connect-to-EC2-Instance-with-SSH"><a href="#Connect-to-EC2-Instance-with-SSH" class="headerlink" title="Connect to EC2 Instance with SSH"></a>Connect to EC2 Instance with SSH</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -i <span class="string">"your.pem"</span> ec2-user@[your dns goes here].amazonaws.com</span><br></pre></td></tr></table></figure>
-<h2 id="Download-Anaconda-3"><a href="#Download-Anaconda-3" class="headerlink" title="Download Anaconda 3"></a>Download Anaconda 3</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
-<p>This is a shell script that guides you though the install. Then run the installation file.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash Anaconda3-5.0.1-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
-<h2 id="Transfer-Data-Between-EC2-Instance-and-Your-Computer"><a href="#Transfer-Data-Between-EC2-Instance-and-Your-Computer" class="headerlink" title="Transfer Data Between EC2 Instance and Your Computer"></a>Transfer Data Between EC2 Instance and Your Computer</h2><p>To upload a file from your laptop to Amazon instance:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -i ~/Desktop/amazon.pem ~/Desktop/test.csv  ec2-user@ec2-54-166-128-20.compute-1.amazonaws.com:~/data/</span><br></pre></td></tr></table></figure>
-<p>Similarly, to download a file from Amazon instance to your laptop:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -i ~/Desktop/amazon.pem ec2-user@ec2-54-166-128-20.compute-1.amazonaws.com:/data/test.py ~/Download/</span><br></pre></td></tr></table></figure>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
-<li><a href="https://stackoverflow.com/questions/38080407/how-can-i-install-the-latest-anaconda-with-wget" target="_blank" rel="noopener">Install Anaconda 3</a></li>
-<li><a href="http://angus.readthedocs.io/en/2014/amazon/transfer-files-between-instance.html" target="_blank" rel="noopener">Transfer data</a></li>
-<li><a href="http://blog.impiyush.com/2015/02/running-ipython-notebook-server-on-aws.html" target="_blank" rel="noopener">Running an iPython Notebook Server on AWS - EC2 Instance</a></li>
-<li><a href="https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6" target="_blank" rel="noopener">Jupyter Notebooks on AWS EC2 in 15 (mostly easy) steps</a></li>
-<li><a href="https://medium.com/@josemarcialportilla/getting-spark-python-and-jupyter-notebook-running-on-amazon-ec2-dec599e1c297" target="_blank" rel="noopener">Getting Spark, Python, and Jupyter Notebook running on Amazon EC2</a></li>
-<li><a href="https://bitmingw.com/2017/07/09/run-jupyter-notebook-server/" target="_blank" rel="noopener">搭建 ipython/jupyter notebook 服务器</a></li>
-<li><a href="http://blog.leanote.com/post/jevonswang/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AEjupyter-notebook" target="_blank" rel="noopener">远程访问jupyter notebook</a></li>
+        <h1 id="1-Regression-Model"><a href="#1-Regression-Model" class="headerlink" title="1 Regression Model"></a>1 Regression Model</h1><h2 id="1-1-Linear-Regression"><a href="#1-1-Linear-Regression" class="headerlink" title="1.1 Linear Regression"></a>1.1 Linear Regression</h2><h3 id="1-1-1-Assumption"><a href="#1-1-1-Assumption" class="headerlink" title="1.1.1 Assumption"></a>1.1.1 Assumption</h3><ol>
+<li>linear relationship: $Y = X \beta + \epsilon$</li>
+<li>zero mean of errors: $\mathbb{E} [\epsilon_i] = 0,\ \forall i=1,\dots,n$</li>
+<li>constant variance of errors: $\text{var}(\epsilon_i) = \sigma^2,\ \forall i=1,\dots,n$</li>
+<li>uncorrelated errors: $\mathbb{E} [\epsilon_i \epsilon_j] = 0,\ i \neq j$</li>
+<li>no perfect multicollinearity: $\rho(x_i,x_j) \neq \pm 1,\ i \neq j$, where $\rho(x_i,x_j)$ is the correlation of regressor $x_i$ and $x_j$</li>
+<li>$\epsilon$ and $x_i$ are independent</li>
 </ol>
-
+<h3 id="1-1-2-Induction"><a href="#1-1-2-Induction" class="headerlink" title="1.1.2 Induction"></a>1.1.2 Induction</h3><p>A simple liniear regression with n observations can be expressed as</p>
+<script type="math/tex; mode=display">y_i = \beta_0 x_{i,0} + \beta_1 x_{i,1} + ... + \beta_p x_{i,p-1} + \epsilon_i</script><p>The goal is to minimize $\sum_{i=1}^{n}\epsilon_i^2$.<br>In matrix format, we have</p>
+<script type="math/tex; mode=display">Y = X \beta + \epsilon,\quad \text{where } Y = [Y_1,Y_2,\dots,Y_n]^T \text{ and } \epsilon = [\epsilon_1,\epsilon_2,\dots,\epsilon_n]^T</script><p>$Y$ and $\epsilon$ are both $n \times 1$ column vectors, $X$ is a $n \times p$ matrix, each column represents a regressor and each row represents an observation. Then we have the minimization problem,</p>
+<script type="math/tex; mode=display">\min_{\beta} f(\beta) = \min_{\beta} \sum_{i=1}^{n}\epsilon_i^2 = \min_{\beta} (Y - X \beta)^T (Y - X \beta)</script><p>F.O.C is</p>
+<script type="math/tex; mode=display">2 X^T (Y - X \hat{\beta}) = 0 \Rightarrow (X^T X) \hat{\beta} = X^T Y, \text{ where } X^T X \text{ is a $p \times p$ matrix and } X^T Y \text{ is a $p \times 1$ column vector.}</script><p>Thus we conclude that $\hat{\beta} = (X^T X)^{-1} X^T Y$</p>
+<h2 id="1-2-LASSO-Regression-L1-Norm"><a href="#1-2-LASSO-Regression-L1-Norm" class="headerlink" title="1.2 LASSO Regression (L1 Norm)"></a>1.2 LASSO Regression (L1 Norm)</h2><h3 id="1-2-1-Cost-function"><a href="#1-2-1-Cost-function" class="headerlink" title="1.2.1 Cost function"></a>1.2.1 Cost function</h3><script type="math/tex; mode=display">f(w) = \sum_{i=1}^{m} (y_i - w^T x)^2 + \lambda \sum_{i=1}^n |w_i|</script><p>which is mathematically equal to the optimization problem</p>
+<script type="math/tex; mode=display">f(w) = \sum_{i=1}^{m} (y_i - w^T x)^2, \\s.t. \sum_{i=1}^n |w_i| \leq \frac{1}{\lambda}</script><h2 id="1-3-Ridge-Regression-L2-Norm"><a href="#1-3-Ridge-Regression-L2-Norm" class="headerlink" title="1.3 Ridge Regression (L2 Norm)"></a>1.3 Ridge Regression (L2 Norm)</h2><h3 id="1-3-1-Cost-function"><a href="#1-3-1-Cost-function" class="headerlink" title="1.3.1 Cost function"></a>1.3.1 Cost function</h3><script type="math/tex; mode=display">f(w) = \sum_{i=1}^{m} (y_i - w^T x)^2 + \lambda \sum_{i=1}^n w_i^2</script><p>which is mathematically equal to the optimization problem</p>
+<script type="math/tex; mode=display">f(w) = \sum_{i=1}^{m} (y_i - w^T x)^2, \\s.t. \sum_{i=1}^n w_i^2 \leq \frac{1}{\lambda}</script><p>we can compute the coefficients as </p>
+<script type="math/tex; mode=display">\hat{w} = (X^T X + \lambda I)^{-1} X^T Y</script><h1 id="2-Common-Distributions"><a href="#2-Common-Distributions" class="headerlink" title="2 Common Distributions"></a>2 Common Distributions</h1><h2 id="2-1-Bernoulli-distribution"><a href="#2-1-Bernoulli-distribution" class="headerlink" title="2.1 Bernoulli distribution"></a>2.1 Bernoulli distribution</h2><p>A random variable X has the Bernoulli distribution with parameter p (0 ≤ p ≤ 1) if X can take only the values 0 and 1 and the probabilities are <script type="math/tex">P(X = 1) = P,\ P(X = 0) = 1 - p</script><br>The p.f. of X can be written as follows:</p>
+<script type="math/tex; mode=display">f(x|p) = \cases{p^x(1-p)^{1-x}\ & \text{for }x = 0,1 \\ 0 & \text{otherwise}}</script><h2 id="2-2-Binomial-distribution"><a href="#2-2-Binomial-distribution" class="headerlink" title="2.2 Binomial distribution"></a>2.2 Binomial distribution</h2><p>A random variable X has the binomial distribution with parameters n and p if X has a discrete distribution for which the p.f. is as follows:</p>
+<script type="math/tex; mode=display">f(x|n,p) = \cases{\binom{N}{k} p^x(1-p)^{n-x}\ & \text{for }x = 0,1,2,\dots,n \\ 0 & \text{otherwise}}</script><h2 id="2-3-Poisson-distribution"><a href="#2-3-Poisson-distribution" class="headerlink" title="2.3 Poisson distribution"></a>2.3 Poisson distribution</h2><p>Let $\lambda &gt; 0$. A random variable X has the Poisson distribution with mean $\lambda$ if the p.f. of X is as follows:</p>
+<script type="math/tex; mode=display">f(x|\lambda) = \cases{\frac{e^{-\lambda}\lambda^x}{x!}\ & \text{for }x = 0,1,2,\dots \\ 0 & \text{otherwise}}</script><h2 id="2-4-Negative-binomial-distribution"><a href="#2-4-Negative-binomial-distribution" class="headerlink" title="2.4 Negative binomial distribution"></a>2.4 Negative binomial distribution</h2><p>A random variable X has the negative binomial distribution with parameters r and p (r = 1, 2, . . . and 0 &lt; p &lt; 1) if X has a discrete distribution for which the p.f. f (x|r, p) is as follows:</p>
+<script type="math/tex; mode=display">f(x|r,p) = \cases{\binom{r+x-1}{x} p^r(1-p)^{x}\ & \text{for }x = 0,1,2,\dots \\ 0 & \text{otherwise}}</script><h2 id="2-5-Geometric-distribution"><a href="#2-5-Geometric-distribution" class="headerlink" title="2.5 Geometric distribution"></a>2.5 Geometric distribution</h2><p>A random variable X has the geometric distribution with parameter p (0 &lt; p &lt; 1) if X has a discrete distribution for which the p.f. f (x|1, p) is as follows:</p>
+<script type="math/tex; mode=display">f(x|1,p) = \cases{p(1-p)^x\ & \text{for }x = 0,1,2,\dots \\ 0 & \text{otherwise}}</script><h2 id="2-6-Gamma-distribution"><a href="#2-6-Gamma-distribution" class="headerlink" title="2.6 Gamma distribution"></a>2.6 Gamma distribution</h2><h3 id="2-6-1-Gamma-function"><a href="#2-6-1-Gamma-function" class="headerlink" title="2.6.1 Gamma function"></a>2.6.1 Gamma function</h3><p>For each positive number $\alpha$, let the value $\Gamma(\alpha)$ be deﬁned by the following integral:</p>
+<script type="math/tex; mode=display">\Gamma(\alpha) = \int_0^{\infty} x^{\alpha - 1} e^{-x} dx</script><p>The function $\Gamma$ is called Gamma function. </p>
+<ul>
+<li>If $\alpha &gt; 1$, then $\Gamma(\alpha) = (\alpha - 1) \Gamma(\alpha - 1)$.</li>
+<li>For every positive integer n, $\Gamma(n) = (n-1)!$</li>
+</ul>
+<h3 id="2-6-2-Stirling’s-formula"><a href="#2-6-2-Stirling’s-formula" class="headerlink" title="2.6.2 Stirling’s formula"></a>2.6.2 Stirling’s formula</h3><p>Let </p>
+<script type="math/tex; mode=display">s_n = \frac{1}{2}\log{2\pi} + (n + \frac{1}{2})\log{n} - n.</script><p>Then $\lim_{n\to \infty}|s_n - \log{n}!| = 0$. That is,</p>
+<script type="math/tex; mode=display">\lim_{n\to \infty}\frac{(2\pi)^{1/2} n^{n + 1/2} e^{-n}}{n!} = 1.</script>
       
     </div>
 
@@ -335,11 +345,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag">#Python</a>
-          
-            <a href="/tags/Jupyter-Notebook/" rel="tag">#Jupyter Notebook</a>
-          
-            <a href="/tags/AWS/" rel="tag">#AWS</a>
+            <a href="/tags/Quant/" rel="tag">#Quant</a>
           
         </div>
       
@@ -348,17 +354,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/20/Day1/" rel="next" title="Day1">
-                <i class="fa fa-chevron-left"></i> Day1
+              <a href="/2018/03/07/Python-dictionary-usage-exploration/" rel="next" title="Python dictionary usage exploration">
+                <i class="fa fa-chevron-left"></i> Python dictionary usage exploration
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/20/LaTeX-test/" rel="prev" title="LaTeX test">
-                LaTeX test <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -501,7 +503,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Running-Jupyter-Notebook-on-AWS-EC2-Made-Easy"><span class="nav-number">1.</span> <span class="nav-text">Running Jupyter Notebook on AWS EC2 Made Easy</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#First-Thing-First-Create-an-AWS-EC2-Instance"><span class="nav-number">1.1.</span> <span class="nav-text">First Thing First: Create an AWS EC2 Instance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Connect-to-EC2-Instance-with-SSH"><span class="nav-number">1.2.</span> <span class="nav-text">Connect to EC2 Instance with SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-Anaconda-3"><span class="nav-number">1.3.</span> <span class="nav-text">Download Anaconda 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transfer-Data-Between-EC2-Instance-and-Your-Computer"><span class="nav-number">1.4.</span> <span class="nav-text">Transfer Data Between EC2 Instance and Your Computer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.5.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Regression-Model"><span class="nav-number">1.</span> <span class="nav-text">1 Regression Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Linear-Regression"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Linear Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-Assumption"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1.1 Assumption</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-Induction"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.1.2 Induction</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-LASSO-Regression-L1-Norm"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 LASSO Regression (L1 Norm)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-Cost-function"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 Cost function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Ridge-Regression-L2-Norm"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 Ridge Regression (L2 Norm)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-Cost-function"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.3.1 Cost function</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Common-Distributions"><span class="nav-number">2.</span> <span class="nav-text">2 Common Distributions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Bernoulli-distribution"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Bernoulli distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Binomial-distribution"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Binomial distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Poisson-distribution"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 Poisson distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Negative-binomial-distribution"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 Negative binomial distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Geometric-distribution"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 Geometric distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Gamma-distribution"><span class="nav-number">2.6.</span> <span class="nav-text">2.6 Gamma distribution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-1-Gamma-function"><span class="nav-number">2.6.1.</span> <span class="nav-text">2.6.1 Gamma function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-2-Stirling’s-formula"><span class="nav-number">2.6.2.</span> <span class="nav-text">2.6.2 Stirling’s formula</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
